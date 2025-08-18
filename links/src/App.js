@@ -1,18 +1,22 @@
 import logo from './logo.svg';
 import './App.css';
-import LinkComponent from './Data/linkComponent';
+import LinksComponent from './Data/linksComponent';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <div>
-          <h1>{LinkComponent.nome}</h1>
-          <a href={LinkComponent.link} target="_blank" rel="noopener noreferrer">
-            {LinkComponent.link}
-          </a>
-        </div>
+        {
+          LinksComponent.map((l) => (
+            <div>
+              <h1>{l.nome}</h1>
+              <a href={l.link} target="_blank" rel="noopener noreferrer">
+                {l.nome}
+              </a>
+            </div>
+          ))
+        }
       </header>
     </div>
   );
